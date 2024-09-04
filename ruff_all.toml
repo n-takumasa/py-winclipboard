@@ -1,0 +1,49 @@
+line-length = 120
+
+[format]
+docstring-code-format = true
+docstring-code-line-length = 80
+
+[lint]
+preview = true
+select = [
+  "ALL",
+]
+ignore = [
+  "ANN001",
+  "ANN202",
+  "CPY",
+  "D",
+  "ERA001",
+  "FA102",
+  "FIX002",
+  "PERF203",
+  "PLC0415",
+  "PLR6301",
+  "TD",
+]
+
+[lint.per-file-ignores]
+"**/scripts/*" = [
+  "INP001",
+  "T201",
+]
+"**/tests/**/*" = [
+  "PLC1901",
+  "PLR2004",
+  "PLR6301",
+  "S",
+  "TID252",
+  # append
+  "ANN201",
+]
+
+[lint.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[lint.isort]
+known-first-party = ["winclipboard"]
+
+[lint.flake8-pytest-style]
+fixture-parentheses = false
+mark-parentheses = false
